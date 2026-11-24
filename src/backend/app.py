@@ -33,11 +33,11 @@ def ler_entrada():
         octetos = [int(octeto) for octeto in octetos_texto]
         prefixo = int(prefixo_texto)
 
-        if any(octeto > 255 for octeto in octetos):
+        if any(octeto > 255 for octeto in octetos) or any(octeto < 0 for octeto in octetos):
             print("Erro: cada octeto deve estar entre 000 e 255. Tente novamente.\n")
             continue
 
-        if prefixo > 32:
+        if prefixo > 32 or prefixo < 0:
             print("Erro: o prefixo deve estar entre 00 e 32. Tente novamente.\n")
             continue
 
